@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- character set -->
+	<meta charset="utf-8">
+	<!-- title -->
+	<title></title>
+	<!-- meta viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- font awesome CSS -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- custom CSS -->
+	<link rel="stylesheet" href="css/main.css">
+	<!-- Reset CSS -->
+	<link rel="stylesheet" href="css/reset.css">
+
+</head>
+
+<body>
+
+<div id="app">
+<div class="header">
+<h1> A Vue.js-based battle game</h1>
+</div>
+
+<div class="row p-2 mb-4 bg-secondary text-white text-center">
+	<div class="col-sm-4">
+	<div class="health-bar">
+		<h2>Player Health</h2>
+		<div class="health-bar-inner" v-bind:style="{ width: playerHealth +'%'}">
+			<h4>{{ playerHealth }}</h4>
+		</div>
+	</div>
+</div>
+	<div class="col-sm-4">
+	<div class="health-bar">
+		<h2>Monster Health</h2>
+		<div class="health-bar-inner" v-bind:style="{ width: monsterHealth + '%'}">
+		<h4>{{ monsterHealth }}</h4>
+		</div>
+	</div>
+</div> 
+</div>
+<section id="buttons">
+<div v-if="!isRunning">
+	<button type="button" class="btn btn-info btn-lg" v-on:click="start">Start Game</button>
+</div>
+<div v-else>
+	<button type="button" id="attack" class= "btn btn-danger btn-lg" v-on:click="attack">Attack</button>
+	<button type="button" id="special" class="btn btn-success btn-lg" v-on:click="special">Special Attack</button>
+	<button type="button" id="heal" class="btn btn-info btn-lg" v-on:click="heal">Heal</button>
+	<button type="button" id="giveup" class="btn btn-warning btn-lg" v-on:click="giveUp">Give Up</button>
+</div>
+</section>
+</div>
+</div>
+</body>
+</head>
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- Vue.Js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+  	src="http://code.jquery.com/jquery-3.3.1.js"
+  	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <!-- custom script -->
+    <script type="text/JavaScript" src="js/bootstrap.min.js"></script>
+    <script type="text/JavaScript" src="js/main.js"></script>
